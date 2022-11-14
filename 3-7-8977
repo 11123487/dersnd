@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[50],b[50],i,j,q,w,flag,n;
+    while(scanf("%s %s",&a,&b)!=EOF)
+    {
+        flag=0;
+        n=0;
+        q=strlen(a);
+        w=strlen(b);
+        for(i=0; i<q; i++)
+        {
+            if(a[i]==b[0])
+            {
+                for(j=0; j<w; j++)
+                {
+                    if(a[i+j]==b[j])
+                        flag++;
+                    else
+                        flag=0;
+                }
+                if(flag==w)
+                {
+                    printf("%d ",i+1);
+                    flag=0;
+                    n++;
+                }
+            }
+        }
+        if(n==0)
+        {
+            printf("-1");
+        }
+        printf("\n");
+    }
+}
