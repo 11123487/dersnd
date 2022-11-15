@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+//write your code here
+int factorial(int x)
+{
+    int i,sum=1;
+    for(i=1;i<=x;i++)
+    sum*=i;
+    return sum;
+}
+
+int main()
+{
+	int i,n;
+    scanf("%d", &n);
+
+	for (i=1;i<=n;i++)
+    	printf("%d\n", factorial(i));
+	return 0;
+}
