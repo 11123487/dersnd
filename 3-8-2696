@@ -1,0 +1,15 @@
+#include <stdio.h>
+int cube(int x)
+{
+    int sum;
+    sum=x*x*x;
+    return sum;
+}
+int main()
+{
+    int i;
+    //write your own codes
+    scanf("%d",&i);
+    printf("%d\n",cube(i));
+	return 0;
+}
