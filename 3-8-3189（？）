@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int S(int x)
+{
+    int sum=0;
+    while(x)
+    {
+        sum++;
+        x/=10;
+    }
+    return sum;
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    printf("%d",S(a));
+}
