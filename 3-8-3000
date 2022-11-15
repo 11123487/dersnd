@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+//write your code here
+double calc(double x,double y,double z)
+{
+    double g;
+    g=x*y*z;
+    return g;
+}
+
+int main()
+{
+	double v,l,w,h;//分别代表:体积、长、宽、高
+    scanf("%lf", &l);
+	scanf("%lf", &w);
+	scanf("%lf", &h);
+	v=calc(l,w,h);
+	//write the output sentence here
+    printf("%.0lf %.0lf %.0lf %.0lf",v,l*w,l*h,w*h);
+	return 0;
+}
