@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int a[12][12],i,j,n,m;
+    while(scanf("%d%d",&m,&n)!=EOF)
+    {
+        for(i=0; i<m; i++)
+        {
+            for(j=0; j<n; j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+        }
+        for(i=0; i<n; i++)
+        {
+            for(j=0; j<m; j++)
+            {
+
+                printf("%d ",a[j][i]);
+            }
+            printf("\n");
+        }
+    }
+}
