@@ -31,7 +31,7 @@ int main()
             {
                 if(a[j][k]<a[j+1][k])
                 {
-                    for(l=0;l<=m;l++)
+                    for(l=0;l<=n;l++)
                     {
                         t=a[j][l];
                         a[j][l]=a[j+1][l];
