@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+double c(int x)
+{
+    int i;
+    double sum;
+    sum=2*x-1;
+    return sum;
+}
+int main()
+{
+    int x,i;
+    double p;
+    while(scanf("%d",&x)!=EOF)
+    {
+        p=4;
+        for(i=2; i<=x; i++)
+        {
+            if(i%2==0)
+            {
+                p-=(4.0/c(i));
+                //printf("p=%lf i=%d c(i)=%lf\n",p,i,c(i));
+            }
+            if(i%2!=0)
+            {
+                p+=(4.0/c(i));
+               // printf("p=%lf i=%d c(i)=%lf\n",p,i,c(i));
+            }
+        }
+        printf("%.10lf\n",p);
+    }
+}
