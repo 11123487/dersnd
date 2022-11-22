@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+double jc(int x)
+{
+    int i;
+    double sum=1;
+    for(i=1; i<=x; i++)
+    {
+        sum*=i;
+    }
+    return sum;
+}
+int main()
+{
+    int x,i;
+    double e;
+    while(scanf("%d",&x)!=EOF)
+    {
+        e=1;
+        for(i=1; i<x; i++)
+        {
+            e+=1/jc(i);
+        }
+        printf("%.4lf\n",e);
+    }
+}
