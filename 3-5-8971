@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int a[20];
+    int n,i,j,min,max;
+    while(scanf("%d%d%d",&n,&min,&max)!=EOF)
+    {
+        i=j=0;
+        while(i<n)
+        {
+            scanf("%d",&a[j]);
+            i++;
+            j++;
+            if(a[j-1]>max || a[j-1]<min)
+            {
+                j--;
+            }
+            //printf("d1\n");
+        }
+        for(i=0; i<j; i++)
+        {
+            printf("%d ",a[i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
