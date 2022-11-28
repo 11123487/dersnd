@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    char a[50];
+    int n,i,x;
+    while(gets(a)!=NULL)
+    {
+        x=0;
+        n=strlen(a);
+        for(i=0;i<n;i++)
+        {
+            if(a[i]=='*')
+            {
+                a[i]='#';
+                x++;
+            }
+        }
+        printf("%d ",x);
+        //puts(a);
+        printf("%s\n",a);
+    }
+    return 0;
+}
