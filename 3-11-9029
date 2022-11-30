@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct link_node
+  {
+      int date;
+      struct link_node *next;
+  }link_node;
+
+int main()
+{
+    link_node *phead,*ptail,*pnew,*p;
+    int i,n;
+   
+      phead=(link_node *)malloc(sizeof(link_node*));
+      if(phead==NULL) exit(1);
+      phead->next=NULL;
+      ptail=phead;
+      n=0;
+      while(1)
+       {
+          pnew=(link_node *)malloc(sizeof(link_node*));
+          if(pnew==NULL) exit(1);
+          scanf("%d",&pnew->date);
+          n++;
+if(pnew->date==0)
+break;
+          ptail->next=pnew;
+          pnew->next=NULL;
+          
+          ptail=pnew;
+          
+       }
+       p=phead->next;
+       while(p)
+       {
+           printf("%d  ",p->date);
+           p=p->next;
+       }
+       printf("\n");
+       printf("%d",n-1);
+    
+
+    return 0;
+}
