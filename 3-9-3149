@@ -1,0 +1,30 @@
+#include <stdio.h>
+// write your code here
+void Strcat(char*s1,char*s2)
+{
+    int i,j;
+    for(i=0;s1[i]!='\r';i++)
+    {
+        ;
+    }
+    for(j=0;;j++)
+    {
+        if(s2[j]==0)
+        {
+            s1[i+j]=s2[j];
+            break;
+        }
+        else
+        s1[i+j]=s2[j];
+    }
+    printf("%s",s1);
+}
+int main()
+{
+ char str1[200];
+ char str2[100];
+
+ gets(str1);
+ gets(str2);
+ Strcat(str1, str2);
+}
