@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct link_node
+    {
+        int date;
+        struct link_node *next;
+    }link_node;
+
+int main()
+{
+    link_node *p,*phead,*pnew;
+    int i,n;
+    while(scanf("%d",&n)!=EOF)
+    {
+    phead=(link_node*)malloc(sizeof(link_node));
+    phead->next=NULL;
+    for(i=0;i<n;i++)
+    {
+        pnew=(link_node*)malloc(sizeof(link_node));
+        scanf("%d",&pnew->date);
+        //连接结点
+        pnew->next=phead->next;
+        phead->next=pnew;
+        //由于头部固定，不用像尾插法一样更新头部
+    }
+    p=phead->next;
+    while(p)
+    {
+        printf("%d  ",p->date);
+        p=p->next;
+    }
+    printf("\n");
+    }
+    return 0;
+}
