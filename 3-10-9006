@@ -1,0 +1,24 @@
+#include <stdio.h>
+struct Stu_Score{
+int mid;
+int end;
+int average;
+};
+
+int main()
+{
+  struct Stu_Score math;
+  while(scanf("%d %d",&math.mid,&math.end)!=EOF)
+  {
+      math.average=(math.mid+math.end)/2;
+      printf("%d\n",math.average);
+  }
+  return 0;
+
+
+
+
+
+
+
+}
