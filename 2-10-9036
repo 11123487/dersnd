@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct link_node
+    {
+        int date;
+        struct link_node *next;
+    }link_node;
+void  sortedlink1(link_node*pnew,link_node*phead)
+{
+    link_node *p=phead,*q=phead->next;
+    while(q)
+    {
+        if((q->date)>(pnew->date)) break;
+        else
+        {
+            p=p->next;
+            q=p->next;
+        }
+    }
+          pnew->next=q;
+          p->next=pnew;
+}
+void  sortedlink2(link_node*pnew,link_node*phead)
+{
+   link_node*p=phead;
+   while(p->next)
+   {
+       if((p->next->date)>(pnew->date))
+        break;
+       else
+        p=p->next;
+   }
+    pnew->next=p->next;
+    p->next=pnew;
+}
+ int main()
+  {
+    link_node * pnew,*phead,*p;
+    int i,n;
+    while(scanf("%d",&n)!=EOF)
+    {
+    phead=(link_node *)malloc(sizeof(link_node));
+    if(phead==NULL) exit(1);
+    phead->next=NULL;
+    for(i=0;i<=n;i++)
+    {
+        pnew=(link_node*)malloc(sizeof(link_node));
+        if(pnew==NULL) exit(1);
+        scanf("%d",&pnew->date);
+        sortedlink2(pnew,phead);
+    }
+    p=phead->next;
+    while(p)
+    {
+        printf("%d  ",p->date);
+        p=p->next;
+    }
+    printf("\n");
+    }
+    return 0;
+ }
