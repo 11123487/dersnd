@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{
+    int len,i,flag,flag1,flag2,j;
+    char arr[100]={0};
+    while(gets(arr)!=NULL)
+    {
+        char arr1[100]={0};
+        strcpy(arr1,arr);
+        int count=1;
+        len=strlen(arr);
+        for(i=0;i<len;i++)
+          {
+         if(((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z'))&&!((arr[i+1]>='A'&&arr[i+1]<='Z')||(arr[i+1]>='a'&&arr[i+1]<='z')))
+            {
+                flag=i;
+                for(j=0;j<((flag+1)/2);j++)
+            {
+                arr1[j]=arr[flag-j];
+                arr1[flag-j]=arr[j];
+            }
+            break;
+            }
+          }
+        for(i=0;i<len;i++)
+        {
+
+            if(((arr[i+1]>='A'&&arr[i+1]<='Z')||(arr[i+1]>='a'&&arr[i+1]<='z'))&&!((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z')))
+            {
+                flag1=i+1;
+                count++;
+            }
+            if(((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z'))&&!((arr[i+1]>='A'&&arr[i+1]<='Z')||(arr[i+1]>='a'&&arr[i+1]<='z')))
+            {
+                flag2=i;
+                for(j=0;j<((flag2-flag1+1)/2);j++)
+            {
+                arr1[flag1+j]=arr[flag2-j];
+                arr1[flag2-j]=arr[flag1+j];
+            }
+           }
+        }
+        printf("%d \n",count);
+        for(i=0;i<strlen(arr1);i++)
+        {
+            if((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z'))
+            printf("%c",arr1[i]);
+            else
+            {
+                printf(" ");
+                if(arr1[i+1]==' '||arr1[i+1]=='.'||arr1[i+1]==',')
+                i++;
+            }
+        }
+        printf("\n");
+        for(i=0;i<100;i++)
+        {
+            arr[i]=0;
+        }
+    }
+}
