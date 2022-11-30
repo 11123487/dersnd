@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct link_node
+{
+    int date;
+    struct link_node* next;
+}link_node;
+link_node* Search(link_node* p, int no, int* pw)
+{
+    int flag = 0;
+    p = p->next;
+    flag = 1;
+    while (p)
+    {
+        if (p->date==no)
+        {
+            (*pw)=flag;
+            return p;
+        }
+        else
+        {
+            p = p->next;
+            flag++;
+        }
+    }
+    return NULL;
+}
+int main()
+{
+    link_node *phead, * ptail, * pnew, * p;
+    int i, n;
+    while (scanf("%d",&n) != EOF)
+    {
+        phead = (link_node*)malloc(sizeof(link_node*));
+        if (phead==NULL) exit(1);
+        phead->next=NULL;
+        ptail = phead;
+        for (i = 0; i < n; i++)
+        {
+            pnew = (link_node*)malloc(sizeof(link_node*));
+            if (pnew == NULL) exit(1);
+            scanf("%d", &pnew->date);
+            ptail->next = pnew;
+            pnew->next = NULL;
+                ptail = pnew;
+        }
+        int no, w = 0;
+        int * pw=&w;
+        scanf("%d", &no);
+        Search(phead, no, pw);
+        if(w==0)
+        printf("%d",w);
+        else
+        printf("%d %d\n", w,no);
+    }
+}
